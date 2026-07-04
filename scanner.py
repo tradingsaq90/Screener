@@ -3,7 +3,10 @@ import pandas as pd
 import requests
 import urllib3
 import yfinance as yf
-import pandas_ta as ta
+try:
+    import pandas_ta as ta
+except ModuleNotFoundError:
+    import pandas_ta_classic as ta
 import concurrent.futures
 
 # Suppress insecure request warnings
